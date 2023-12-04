@@ -7,6 +7,7 @@ import LandingPage from "./Components/LandingPage";
 import Property from "./Components/Property/Property";
 import Seller from "./Components/Seller/Seller";
 import Buyer from "./Components/Buyer/Buyer";
+import BuyerProfile from "./Components/Buyer/BuyerProfile";
 import SellerProperty from "./Components/Seller/SellerProperty";
 import Booking from './Components/Booking/Booking';
 import Error from "./Components/Error";
@@ -21,6 +22,7 @@ function App() {
                 <Route path="seller" element={<Seller/>}/>
                 <Route path="seller/:sellerId/property" element={<SellerProperty/>}/>
                 <Route path="buyer" element={<Buyer/>}/>
+                <Route path="buyer/:buyerId/profile" element={<BuyerProfile/>}/>
                 <Route path="property/:propertyId/booking" element={<Booking/>}/>
                 <Route path="*" element={<Error/>}/>
             </Route>

@@ -21,14 +21,17 @@ export default function Buyer(){
     };
     const [buyersList, dispatch] = useReducer(buyerListReducer, []);
 
+
     useEffect( () => {
         setLoading(true);
 
         fetch("http://localhost:3001/buyer")
             .then((response) => response.json())
             .then( (buyers) => {
+                //getBuyers(buyers);
                 dispatch({type: "SET", payload: buyers});
                 setLoading(false);
+                //console.log(JSON.stringify(buyers));
             })
     }, []);
 
@@ -46,20 +49,26 @@ export default function Buyer(){
                     : ""
             }
 
-            <ul>
-                {
-                    buyersList.map( buyer => {
-                        <li key={buyer.id}>
-                            <div className="buyerBlock">
-                                <i className="bi bi-person-fill"/>{buyer.firstName}&nbsp;{buyer.surname}
-                            </div>
-                            <i className="bi bi-geo-alt-fill"/>{buyer.address}&nbsp;{buyer.postcode}<i/><i/>
-                            <i className="fa fa-phone"/>{buyer.phone}&nbsp;
-                            REF: {buyer.id}
-                        </li>
-                    })
-                }
-            </ul>
+
+            <div>
+                <ul className={"custom-list"}>
+                    {
+                        buyersList.map( (buyer) =>
+                        <>
+                            <li key={buyer.id}>
+                                <div className={"buyerBlock bg-dark-subtle"}> {buyer.firstName}&nbsp;{buyer.surname} </div>
+                                Address: {buyer.address}&nbsp;{buyer.postcode} <br/>
+                                Phone: {buyer.phone} <br/>
+                                REF: {buyer.id}
+                                <Link to={`${buyer.id}/profile`} state={buyer}
+                                      className="btn btn-info btn-sm float-end">
+                                    <i className="bi bi-person-fill"/>&nbsp;Edit Profile</Link>
+                            </li>
+                        </>
+                        )
+                    }
+                </ul>
+            </div>
 
 
         </>
