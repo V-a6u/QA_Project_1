@@ -1,9 +1,19 @@
 body{
-  background: #204c6a;
+  background: #141414;
+  color: #FFFFFF;
 }
 
 .App {
   text-align: center;
+}
+
+.pageHeader {
+  margin: 10px;
+  padding: 5px 5px 5px 10px;
+  height: 50px;
+  font-size: 20pt;
+  color: white;
+  background-color: #A9A9A9;
 }
 
 .App-logo {

@@ -15,15 +15,15 @@ function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage/>}> {/*This is the root path*/}
-            <Route index element={<Property/>}/> {/*This is the default component shown in the <Outlet> tag */}
-            <Route path="property" element={<Property/>}/>
-            <Route path="seller" element={<Seller/>}/>
-            <Route path="seller/:sellerId/property" element={<SellerProperty/>}/>
-            <Route path="buyer" element={<Buyer/>}/>
-            <Route path="property/:propertyId/booking" element={<Booking/>}/>
-            <Route path="*" element={<Error/>}/>
-          </Route>
+            <Route path="/" element={<LandingPage/>}> {/*This is the root path*/}
+                <Route index element={<Property/>}/> {/*This is the default component shown in the <Outlet> tag */}
+                <Route path="property" element={<Property/>}/>
+                <Route path="seller" element={<Seller/>}/>
+                <Route path="seller/:sellerId/property" element={<SellerProperty/>}/>
+                <Route path="buyer" element={<Buyer/>}/>
+                <Route path="property/:propertyId/booking" element={<Booking/>}/>
+                <Route path="*" element={<Error/>}/>
+            </Route>
         </Routes>
       </BrowserRouter>
   );
