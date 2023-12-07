@@ -2,10 +2,11 @@ import React, {useEffect, useReducer, useState} from "react";
 import {Link} from "react-router-dom";
 
 import "./Buyer.css"
+import AddBuyerForm from "./AddBuyerForm";
+
 
 export default function Buyer(){
     const [loading, setLoading] = useState(false);
-    const [saving, setSaving] = useState(false);
 
     const buyerListReducer = (state, action) => {
         switch (action.type) {
@@ -13,14 +14,26 @@ export default function Buyer(){
                 return state.concat(action.payload);
             case "SET":
                 return action.payload;
-            case "REMOVE":
-                return state.filter(buyer => buyer.id !== action.payload);
             default:
                 return state;
         }
     };
     const [buyersList, dispatch] = useReducer(buyerListReducer, []);
 
+    const buyerAddHandler = (newBuyer) => {
+        fetch("http://localhost:3001/buyer", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newBuyer)
+        })
+            .then((response) => response.json())
+            .then(newBuyer => {
+                dispatch({type: "ADD", payload: newBuyer});
+            })
+            .then(() => {
+                alert("Buyer " + newBuyer.firstName + " " + newBuyer.surname + " added.")
+            });
+    };
 
     useEffect( () => {
         setLoading(true);
@@ -37,7 +50,8 @@ export default function Buyer(){
 
     return(
         <>
-            <header>Add new buyer form</header>
+            <div className="pageHeader bg-dark"><i className="bi bi-person-square"/>&nbsp;Manage Buyers</div>
+            <AddBuyerForm addHandler={buyerAddHandler}/>
             <hr/>
 
             {

@@ -119,6 +119,22 @@
       "address": "15 Main Street, Cardiff",
       "postcode": "CF1 1AN",
       "phone": "01234567813"
+    },
+    {
+      "firstName": "\\v",
+      "surname": "ghf",
+      "address": "hjfg",
+      "postcode": "jfjf",
+      "phone": "jhfj",
+      "id": 16
+    },
+    {
+      "firstName": "fu",
+      "surname": "uyt",
+      "address": "fyuf",
+      "postcode": "yufyu",
+      "phone": "fyufuyf",
+      "id": 17
     }
   ],
   "property": [
@@ -404,6 +420,14 @@
       "address": "9 Whisker Way, Oxford",
       "postcode": "OX1 1PA",
       "phone": "01234567814"
+    },
+    {
+      "firstName": "Vasu",
+      "surname": "Agarwal",
+      "address": "asjdg",
+      "postcode": "201002",
+      "phone": "897785765",
+      "id": 16
     }
   ],
   "booking": [
@@ -442,12 +466,6 @@
       "propertyId": 10,
       "time": "2023-03-05T11:30:00.018Z",
       "id": 7
-    },
-    {
-      "buyerId": 7,
-      "propertyId": 12,
-      "time": "2023-03-06T14:45:00.025Z",
-      "id": 8
     },
     {
       "buyerId": 8,
@@ -496,6 +514,156 @@
       "propertyId": 14,
       "time": "2023-03-14T16:15:00.020Z",
       "id": 16
+    },
+    {
+      "buyer": {
+        "id": "1"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T08:00:00.000Z",
+      "id": 17
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T08:00:00.000Z",
+      "id": 18
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 19
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 20
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 21
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 22
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 23
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 24
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 25
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 26
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 27
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 28
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 29
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 30
+    },
+    {
+      "buyer": {
+        "id": "12"
+      },
+      "property": {
+        "id": 12
+      },
+      "time": "2023-12-05T16:00:00.000Z",
+      "id": 31
     }
   ]
 }

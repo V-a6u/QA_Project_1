@@ -1,11 +1,14 @@
 import React, {useEffect, useReducer, useState} from "react";
 import {Link} from "react-router-dom";
 
+import SellerForm from './AddSellerForm';
+import SellerProperty from './SellerProperty';
+
 import "./Seller.css";
 
 export default function Seller(){
     const [loading, setLoading] = useState(false);
-    const [saving, setSaving] = useState(false);
+
     const sellerListReducer = (state, action) => {
         switch (action.type) {
             case "ADD":
@@ -18,8 +21,6 @@ export default function Seller(){
     };
     const [sellersList, dispatch] = useReducer(sellerListReducer, []);
     const sellerAddHandler = (newSeller) => {
-        setSaving(true);
-
         fetch("http://localhost:3001/seller", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -28,7 +29,9 @@ export default function Seller(){
             .then((response) => response.json())
             .then(newSeller => {
                 dispatch({type: "ADD", payload: newSeller});
-                setSaving(false);
+            })
+            .then(() => {
+                alert("Seller " + newSeller.firstName + " " + newSeller.surname + " added.")
             });
     };
 
@@ -44,7 +47,8 @@ export default function Seller(){
 
     return(
         <>
-            <header>Add seller form here</header>
+            <div className="pageHeader bg-dark"><i className="bi bi-person-square"/>&nbsp;Manage Sellers</div>
+            <SellerForm addHandler={sellerAddHandler}/>
             <hr/>
 
             {

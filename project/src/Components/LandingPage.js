@@ -1,6 +1,6 @@
 import {Link, Outlet} from "react-router-dom";
 import React from "react";
-import logo from './logo192.png';
+import logo from './house-logo.png';
 import './LandingPage.css';
 
 export default function LandingPage(){

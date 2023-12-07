@@ -1,0 +1,13 @@
+form {
+    background-color: #000000;
+    margin: 10px;
+    padding: 5px 5px 5px 10px;
+}
+
+.custom-button {
+    margin: 10px;
+}
+
+label{
+    margin: 5px;
+}
