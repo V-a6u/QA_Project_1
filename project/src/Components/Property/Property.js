@@ -2,6 +2,7 @@ import React, {useEffect, useReducer, useState} from "react";
 import {Link} from "react-router-dom";
 
 import "./Property.css";
+import houseImage from "../Property/pexels-binyamin-mellish-186077.jpg"
 import FilterProperty from "./FilterProperty";
 
 export default function Property(){
@@ -75,6 +76,9 @@ export default function Property(){
                     searchResult.map(property => (
                         <>
                             <li key={property.id}>
+                                <div className={"d-inline-block align-top property-img"}>
+                                    <img src={property.imageUrl} alt={`Property images for property ${property.id} are missing`} className={"property-img"}/>
+                                </div>
                                 <div className={"priceBlock " + iconClassForStatus(property.status)}>
                                     <span>{property.status}</span><br/>
                                     £{property.price}
@@ -91,7 +95,7 @@ export default function Property(){
                                     </div>
                                 </div>
                                 {
-                                    property.status === "FORSALE" ?
+                                    property.status === "FOR SALE" ?
                                         <Link to={`/property/${property.id}/booking`} state={property}
                                               className="btn btn-info btn-sm float-end">
                                             <i className="bi-alarm"/>&nbsp;Manage Bookings</Link>

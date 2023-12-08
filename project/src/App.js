@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import "./App.css";
 
 import LandingPage from "./Components/LandingPage";
+import Home from "./Components/Home";
 import Property from "./Components/Property/Property";
 import Seller from "./Components/Seller/Seller";
 import Buyer from "./Components/Buyer/Buyer";
@@ -17,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<LandingPage/>}> {/*This is the root path*/}
-                <Route index element={<Property/>}/> {/*This is the default component shown in the <Outlet> tag */}
+                <Route index element={<Home/>}/> {/*This is the default component shown in the <Outlet> tag */}
                 <Route path="property" element={<Property/>}/>
                 <Route path="seller" element={<Seller/>}/>
                 <Route path="seller/:sellerId/property" element={<SellerProperty/>}/>

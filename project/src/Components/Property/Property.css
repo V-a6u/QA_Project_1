@@ -2,7 +2,7 @@
     border: 1px darkgreen solid;
     border-radius: 5px;
     padding: 5px;
-    margin-right: 20px;
+    margin-right: 10%;
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 15pt;
@@ -96,4 +96,10 @@ ul{
 
 button{
     margin-top: 10px;
+}
+
+.property-img{
+    width: 50%;
+    height: 50%;
+    margin-right: -20%;
 }

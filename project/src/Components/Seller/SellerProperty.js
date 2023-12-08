@@ -1,17 +1,104 @@
-import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useParams, useLocation} from "react-router-dom";
+import React, {useEffect, useState, useReducer, useRef} from "react";
+
+import SellerPropertyForm from "./SellerPropertyForm";
 
 export default function SellerProperty(){
     const {sellerId} = useParams();
+    const seller = useLocation().state; //to keep the state secure
 
-    let [sellerRecord, setSellerRecord] = useState([]);
+    const propertyStatus = useRef();
 
+    //let [sellerRecord, setSellerRecord] = useState([]);
+
+    const propertyListReducer = (state, action) => {
+        switch (action.type) {
+            case "ADD":
+                return state.concat(action.payload);
+            case "SET":
+                return action.payload;
+            case "REMOVE":
+                return state.filter(property => property.id !== action.payload.id);
+            default:
+                return state;
+        }
+    };
+    const [properties, dispatch] = useReducer(propertyListReducer, []);
+
+    useEffect(() => {
+        fetch("http://localhost:3001/property")
+            .then((response) => response.json())
+            .then(properties => {
+                dispatch({type: "SET", payload: properties});
+            });
+    }, []);
+
+    const FetchProperty = () => {
+        fetch("http://localhost:3001/property")
+            .then((response) => response.json())
+            .then(properties => {
+                dispatch({type: "SET", payload: properties});
+            });
+    }
+    const propertyAddHandler = (newProperty) => {
+        fetch("http://localhost:3001/property", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newProperty)
+        })
+            .then((response) => response.json())
+            .then((newProperty) => {
+                dispatch({type: "ADD", payload: newProperty});
+            })
+            .then(alert("New property added"));
+    };
+
+    const iconClassForStatus = (propertyStatus) => {
+        switch (propertyStatus) {
+            case "FOR SALE" :
+                return "forsale";
+            case "SOLD" :
+                return "sold";
+            case "WITHDRAWN" :
+                return "withdrawn";
+        }
+    };
+
+    function toCamelCase(uppercaseString){
+        return uppercaseString.charAt(0).toUpperCase() + uppercaseString.slice(1).toLowerCase();
+    }
+
+    function sellProperty(){
+        alert("Property has been sold");
+        propertyStatus.current.value = "SOLD";
+    }
+
+    function withdrawProperty(propertyId, propertyAddress, propertyPostcode){
+        const confirmMessage = "Are you sure you want to delete property with \nREFERENCE: " + propertyId + "\nADDRESS: " + propertyAddress + "\n" + propertyPostcode;
+        const confirmDelete = window.confirm(confirmMessage);
+
+        if(confirmDelete) {
+            fetch(`http://localhost:3001/property/${propertyId}`, {
+                method: "DELETE"
+            })
+                .then((propertyToUpdate) => { dispatch({type: "REMOVE", payload: propertyToUpdate}) })
+                .then(alert("Property deleted"));
+
+            FetchProperty();
+
+        }
+
+
+    }
+
+    /* Using map and filter function
     useEffect(() => {
         fetch(`http://localhost:3001/seller/`)
             .then( (response) => response.json())
             .then( (record) => setSellerRecord(record))
             .then(console.log(sellerRecord))
     }, []);
+
 
     return (
         <>
@@ -24,5 +111,58 @@ export default function SellerProperty(){
             </ul>
 
         </>
+    )*/
+
+
+    return(
+        <>
+            <SellerPropertyForm addHandler={propertyAddHandler} state={seller}/>
+            <hr/>
+
+            {/*<BuyerSelector property={soldProperty} propertyUpdateHandler={propertyUpdateHandler} id={buyerSelectorId}/>*/}
+            <ul className={"seller-list"}>
+                {
+                    properties.filter(property => Number(property.sellerId) === Number(seller.id)).map(property => (
+                        <li key={property.id}>
+                            <div className={"d-inline-block align-top property-img"}>
+                                <img src={property.imageUrl} alt={`Property images for property ${property.id} are missing`} className={"property-img"}/>
+                            </div>
+                            <div className={"priceBlock " + iconClassForStatus(property.status)}>
+                                <span ref={propertyStatus}>{property.status}</span><br/>
+                                £{property.price}
+                            </div>
+                            <div className="detailsBlock">
+                                <div>Address: {property.address} <br/>
+                                    {property.postcode}</div>
+                                <div>
+                                    <span>Type: {toCamelCase(property.type)}</span> <br/>
+                                    <span>Bedrooms: {property.bedroom}</span> <br/>
+                                    <span>Bathrooms: {property.bathroom}</span> <br/>
+                                    <span>Garden: {Number(property.garden) ? "Yes" : "No"}</span> <br/>
+                                    Reference:&nbsp;{property.id}
+                                </div>
+                            </div>
+                            {
+                                property.status === "FOR SALE" ?
+                                    <div className="text-end">
+                                        <button type="button" className={"btn btn-primary"}>
+                                            <i className="bi bi-pencil-fill"></i>&nbsp;Edit Property
+                                        </button>
+                                        <button type="button" className={"btn btn-warning"} onClick={sellProperty}>
+                                            <i className="bi bi-credit-card-2-front-fill"></i>&nbsp;Sell Property
+                                        </button>
+                                        <button type="button" className={"btn btn-danger"} onClick={() => withdrawProperty(property.id, property.address, property.postcode)}>
+                                            <i className="bi bi-trash-fill"></i>&nbsp;Withdraw Property
+                                        </button>
+                                    </div>
+                                : ""
+                            }
+                        </li>
+                    )
+                    )
+                }
+            </ul>
+        </>
     )
+
 }

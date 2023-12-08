@@ -11,7 +11,7 @@ ul{
 }
 
 .custom-list li{
-    padding: 10px 15px;
+    padding: 25px;
     transition: background-color 0.3s ease;
 }
 
@@ -26,4 +26,11 @@ ul{
 .custom-list li:hover {
     background-color: #E50914; /* Red accent color for hover */
     color: #FFFFFF; /* Text color on hover */
+}
+
+.custom-accordian{
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    margin-right: 20px;
 }
