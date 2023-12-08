@@ -82,9 +82,10 @@ export default function SellerProperty(){
                 method: "DELETE"
             })
                 .then((propertyToUpdate) => { dispatch({type: "REMOVE", payload: propertyToUpdate}) })
-                .then(alert("Property deleted"));
+                .then(alert("Property deleted"))
+                .then(FetchProperty);
 
-            FetchProperty();
+            //FetchProperty();
 
         }
 
