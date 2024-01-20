@@ -34,6 +34,7 @@ export default function AddSellerForm(props){
                 "address": addressRef.current.value,
                 "postcode": postcodeRef.current.value,
                 "phone": phoneRef.current.value,
+                "properties" : []
             });
 
         }
@@ -60,6 +61,7 @@ export default function AddSellerForm(props){
                 "address": addressRef.current.value,
                 "postcode": postcodeRef.current.value,
                 "phone": phoneRef.current.value,
+                "properties" : []
             });
             clearForm();
         }
@@ -82,7 +84,7 @@ export default function AddSellerForm(props){
                 {/*Addrss: <input type="text" ref={addressRef} id={"address"} /> <br/>*/}
                 {/*Postcode: <input type="text" ref={postcodeRef} id={"postcode"} /> <br/>*/}
                 {/*Phone: <input type="text" ref={phoneRef} id={"phone"} /> <br/>*/}
-                {/*<input type={"button"} value={"Sumit"} onClick={() => addSeller()}/>*/}
+                {/*<input type={"button"} value={"Submit"} onClick={() => addSeller()}/>*/}
 
                 <div className="row">
                     <div className="form-group col-md-6">

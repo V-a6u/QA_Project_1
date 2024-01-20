@@ -20,6 +20,8 @@ export default function Seller(){
     const [sellerToEdit, setSellerToEdit] = useState();
     const [show, setShow] = useState(false);
 
+    const token = sessionStorage.getItem("jwt");
+
     const handleClose = () => setShow(false);
     const handleShow = (seller) => {
         setSellerToEdit(seller)
@@ -28,16 +30,18 @@ export default function Seller(){
 
     const handleUpdate = (sellerId) => {
         let newSellerDetails = {
+            "id" : sellerId,
             "firstName": firstNameRef.current.value,
             "surname": surnameRef.current.value,
             "address": addressRef.current.value,
             "postcode": postcodeRef.current.value,
             "phone": phoneRef.current.value,
+            "properties" : []
         }
 
-        fetch(`http://localhost:3001/seller/${sellerId}`, {
-            method: "PATCH",
-            headers: {"Content-Type": "application/json"},
+        fetch(`https://localhost:7091/Seller/${sellerId}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},
             body: JSON.stringify(newSellerDetails)
         })
             .then(setShow(false))
@@ -62,7 +66,7 @@ export default function Seller(){
     //Loaded on default
     useEffect(() => {
         setLoading(true);
-        fetch("http://localhost:3001/seller")
+        fetch("https://localhost:7091/Seller/")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -86,9 +90,9 @@ export default function Seller(){
     // };
 
     const sellerAddHandler = (newSeller) => {
-        fetch("http://localhost:3001/seller", {
+        fetch("https://localhost:7091/Seller", {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},
             body: JSON.stringify(newSeller)
         })
             .then((response) => response.json())
@@ -102,7 +106,7 @@ export default function Seller(){
 
 
     function FetchSellers() {
-        fetch("http://localhost:3001/seller")
+        fetch("https://localhost:7091/Seller")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -115,8 +119,9 @@ export default function Seller(){
         const confirmDelete = window.confirm(confirmMessage);
 
         if(confirmDelete) {
-            fetch(`http://localhost:3001/seller/${sellerId}`, {
-                method: "DELETE"
+            fetch(`https://localhost:7091/Seller/${sellerId}`, {
+                method: "DELETE",
+                headers: {"Authorization" : `Bearer ${token}`}
             })
                 .then((sellerToDelete) => { dispatch({type: "REMOVE", payload: sellerToDelete}) })
                 .then(alert("Seller deleted"))

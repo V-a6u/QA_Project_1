@@ -12,6 +12,7 @@ import BuyerProfile from "./Components/Buyer/BuyerProfile";
 import SellerProperty from "./Components/Seller/SellerProperty";
 import Booking from './Components/Booking/Booking';
 import Error from "./Components/Error";
+import Login from "./Components/LoginTest";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                 <Route path="buyer" element={<Buyer/>}/>
                 <Route path="buyer/:buyerId/profile" element={<BuyerProfile/>}/>
                 <Route path="property/:propertyId/booking" element={<Booking/>}/>
+                <Route path={"login"} element={<Login/>}/>
                 <Route path="*" element={<Error/>}/>
             </Route>
         </Routes>
