@@ -30,16 +30,16 @@ export default function Seller(){
 
     const handleUpdate = (sellerId) => {
         let newSellerDetails = {
-            "id" : sellerId,
+            //"id" : sellerId,
             "firstName": firstNameRef.current.value,
             "surname": surnameRef.current.value,
             "address": addressRef.current.value,
             "postcode": postcodeRef.current.value,
             "phone": phoneRef.current.value,
-            "properties" : []
+            //"properties" : []
         }
 
-        fetch(`https://localhost:7091/Seller/${sellerId}`, {
+        fetch(`https://localhost:3001/seller/${sellerId}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},
             body: JSON.stringify(newSellerDetails)
@@ -66,7 +66,7 @@ export default function Seller(){
     //Loaded on default
     useEffect(() => {
         setLoading(true);
-        fetch("https://localhost:7091/Seller/")
+        fetch("https://localhost:3001/seller/")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -90,7 +90,7 @@ export default function Seller(){
     // };
 
     const sellerAddHandler = (newSeller) => {
-        fetch("https://localhost:7091/Seller", {
+        fetch("https://localhost:3001/seller", {
             method: "POST",
             headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},
             body: JSON.stringify(newSeller)
@@ -106,7 +106,7 @@ export default function Seller(){
 
 
     function FetchSellers() {
-        fetch("https://localhost:7091/Seller")
+        fetch("https://localhost:3001/seller")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -119,7 +119,7 @@ export default function Seller(){
         const confirmDelete = window.confirm(confirmMessage);
 
         if(confirmDelete) {
-            fetch(`https://localhost:7091/Seller/${sellerId}`, {
+            fetch(`https://localhost:3001/seller/${sellerId}`, {
                 method: "DELETE",
                 headers: {"Authorization" : `Bearer ${token}`}
             })

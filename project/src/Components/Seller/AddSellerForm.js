@@ -34,7 +34,7 @@ export default function AddSellerForm(props){
                 "address": addressRef.current.value,
                 "postcode": postcodeRef.current.value,
                 "phone": phoneRef.current.value,
-                "properties" : []
+                //"properties" : []
             });
 
         }
