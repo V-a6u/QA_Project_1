@@ -103,3 +103,33 @@ button{
     height: 50%;
     margin-right: -20%;
 }
+
+.accordion {
+    margin: 15px 10px 10px 10px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: white;
+    background-color: black;
+}
+
+.accordion-button {
+    width: 99%;
+    color: white;
+    background-color: black;
+}
+
+.accordion-button::after {
+    color: orange;
+    background-color: black;
+}
+
+.accordion-body {
+    color: orange;
+    background-color: black;
+}
+
+.accordion-item {
+    color: orange;
+    background-color: black;
+}

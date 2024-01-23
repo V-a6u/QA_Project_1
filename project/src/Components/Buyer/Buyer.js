@@ -121,7 +121,14 @@ export default function Buyer(){
             {/*    </Accordion.Item>*/}
             {/*</Accordion>*/}
             <div className="pageHeader bg-dark"><i className="bi bi-person-square"/>&nbsp;Manage Buyers</div>
-            <AddBuyerForm addHandler={buyerAddHandler}/>
+            <Accordion >
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Add Buyer</Accordion.Header>
+                <Accordion.Body>
+                <AddBuyerForm addHandler={buyerAddHandler}/>
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
             <hr/>
 
             {

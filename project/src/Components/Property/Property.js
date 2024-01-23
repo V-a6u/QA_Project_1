@@ -1,5 +1,6 @@
 import React, {useEffect, useReducer, useState} from "react";
 import {Link} from "react-router-dom";
+import Accordion from 'react-bootstrap/Accordion';
 
 import "./Property.css";
 import houseImage from "../Property/pexels-binyamin-mellish-186077.jpg"
@@ -61,7 +62,16 @@ export default function Property(){
     return (
         <>
             <div className="pageHeader bg-dark"><i className="bi bi-house-fill"/>&nbsp;Property Search and Bookings</div>
-            <FilterProperty searchHandler={searchHandler}/>
+            
+            <Accordion  >
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Filter Properties</Accordion.Header>
+                <Accordion.Body>
+                <FilterProperty searchHandler={searchHandler}/>
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
+
             <hr/>
             {
                 loading ?
