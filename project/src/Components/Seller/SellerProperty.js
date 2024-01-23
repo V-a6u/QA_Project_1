@@ -73,7 +73,7 @@ export default function SellerProperty(){
         propertyStatus.current.value = "SOLD";
     }
 
-    function withdrawProperty(propertyId, propertyAddress, propertyPostcode){
+    function deleteProperty(propertyId, propertyAddress, propertyPostcode){
         const confirmMessage = "Are you sure you want to delete property with \nREFERENCE: " + propertyId + "\nADDRESS: " + propertyAddress + "\n" + propertyPostcode;
         const confirmDelete = window.confirm(confirmMessage);
 
@@ -90,6 +90,38 @@ export default function SellerProperty(){
         }
 
 
+    }
+
+    function withdrawProperty(propertyId, propertyAddress, propertyPostcode) {
+        const confirmMessage = "Are you sure you want to withdraw property with \nREFERENCE: " + propertyId + "\nADDRESS: " + propertyAddress + "\n" + propertyPostcode;
+        const confirmWithdraw = window.confirm(confirmMessage);
+
+        if(confirmWithdraw) {
+            fetch(`http://localhost:3001/property/${propertyId}`, {
+                method: "PATCH",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({status: "WITHDRAWN"})
+            })
+                .then((propertyToUpdate) => { dispatch({type: "UPDATE", payload: propertyToUpdate}) })
+                .then(alert("Property withdrawn"))
+                .then(FetchProperty);
+        }
+    }
+
+    function resubmitProperty(propertyId, propertyAddress, propertyPostcode) {
+        const confirmMessage = "Are you sure you want to resubmit property with \nREFERENCE: " + propertyId + "\nADDRESS: " + propertyAddress + "\n" + propertyPostcode;
+        const confirmResubmit = window.confirm(confirmMessage);
+
+        if(confirmResubmit) {
+            fetch(`http://localhost:3001/property/${propertyId}`, {
+                method: "PATCH",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({status: "FOR SALE"})
+            })
+                .then((propertyToUpdate) => { dispatch({type: "UPDATE", payload: propertyToUpdate}) })
+                .then(alert("Property resubmitted"))
+                .then(FetchProperty);
+        }
     }
 
     /* Using map and filter function
@@ -152,8 +184,20 @@ export default function SellerProperty(){
                                         <button type="button" className={"btn btn-warning"} onClick={sellProperty}>
                                             <i className="bi bi-credit-card-2-front-fill"></i>&nbsp;Sell Property
                                         </button>
-                                        <button type="button" className={"btn btn-danger"} onClick={() => withdrawProperty(property.id, property.address, property.postcode)}>
+                                        <button type="button" className={"btn btn-danger"} onClick={() => deleteProperty(property.id, property.address, property.postcode)}>
+                                            <i className="bi bi-trash-fill"></i>&nbsp;Delete Property
+                                        </button>
+                                        <button type="button" className={"btn btn-info"} onClick={() => withdrawProperty(property.id, property.address, property.postcode)}>
                                             <i className="bi bi-trash-fill"></i>&nbsp;Withdraw Property
+                                        </button>
+                                    </div>
+                                : ""
+                            }
+                            {
+                                property.status === "WITHDRAWN" ?
+                                    <div className="text-end">
+                                        <button type="button" className={"btn btn-info"} onClick={() => resubmitProperty(property.id, property.address, property.postcode)}>
+                                            <i className="bi bi-trash-fill"></i>&nbsp;Resubmit Property
                                         </button>
                                     </div>
                                 : ""

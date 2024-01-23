@@ -66,7 +66,7 @@ export default function Seller(){
     //Loaded on default
     useEffect(() => {
         setLoading(true);
-        fetch("https://localhost:3001/seller/")
+        fetch("http://localhost:3001/seller/")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
