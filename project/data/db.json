@@ -337,6 +337,19 @@
       "status": "FOR SALE",
       "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif",
       "Status": "WITHDRAWN"
+    },
+    {
+      "id": "7257",
+      "address": "werwerwer",
+      "postcode": "werwer",
+      "type": "SEMI",
+      "price": "123123123",
+      "bedrooms": "1",
+      "bathrooms": "5",
+      "garden": "true",
+      "sellerId": "1",
+      "status": "FOR SALE",
+      "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif"
     }
   ],
   "buyer": [

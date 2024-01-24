@@ -1,5 +1,7 @@
 import {useParams, useLocation} from "react-router-dom";
 import React, {useEffect, useState, useReducer, useRef} from "react";
+import Accordion from 'react-bootstrap/Accordion';
+
 
 import SellerPropertyForm from "./SellerPropertyForm";
 
@@ -149,7 +151,14 @@ export default function SellerProperty(){
 
     return(
         <>
-            <SellerPropertyForm addHandler={propertyAddHandler} state={seller}/>
+            <Accordion >
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Add Property</Accordion.Header>
+                <Accordion.Body>
+                <SellerPropertyForm addHandler={propertyAddHandler} state={seller}/>
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
             <hr/>
 
             {/*<BuyerSelector property={soldProperty} propertyUpdateHandler={propertyUpdateHandler} id={buyerSelectorId}/>*/}
