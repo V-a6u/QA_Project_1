@@ -19,12 +19,22 @@ export default function Booking() {
   const [loading, setLoading] = useState(false);
   const [dateValue, setDateValue] = useState(new Date());
   const [showAlert, setShowAlert] = useState(false);
+  const [bookings, setBookings] = useState([]);
+
 
   useEffect(() => {
     setLoading(true);
     fetch(`http://localhost:3001/property/${propertyId}`)
       .then((response) => response.json())
       .then((record) => setPropertyRecord(record))
+      .then(setLoading(false));
+  }, [propertyId]);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(`http://localhost:3001/booking?propertyId=${propertyId}`)
+      .then((response) => response.json())
+      .then((record) => setBookings(record))
       .then(setLoading(false));
   }, [propertyId]);
 
@@ -88,33 +98,28 @@ export default function Booking() {
       <br />
       <br />
 
-      {/* <ul className={"custom-list"}>
+      <ul className={"custom-list"}>
                 {
-                    propertyRecord.filter((record) => record.id === propertyId
-                        )
-                        .map(property => (
+                    bookings.map(booking => (
                         <>
-                            <li key={property.id}>
+                            <li key={booking.id}>
                                 <div className={"priceBlock forsale"}>
-                                    <span>{property.status}</span><br/>
-                                    £{property.price}
+                                    <span>{booking.status}</span><br/>
+                                    £{booking.price}
                                 </div>
                                 <div className="detailsBlock">
-                                    <div>Address: {property.address} <br/>
-                                        {property.postcode}</div>
                                     <div>
-                                        <span>Type: {property.type}</span> <br/>
-                                        <span>Bedrooms: {property.bedroom}</span> <br/>
-                                        <span>Bathrooms: {property.bathroom}</span> <br/>
-                                        <span>Garden: {Number(property.garden) ? "Yes" : "No"}</span> <br/>
-                                        Reference:&nbsp;{property.id}
+                                        <span>Buyer: {buyers.filter(buyer => buyer.id === booking.buyerId).map(buyerDetails => (<span>{buyerDetails.firstName + ' ' + buyerDetails.surname}</span>)) }</span> <br/>
+                                        <span>Time: {booking.time}</span> <br/>
+                                        <span>Date: {new Date(booking.date).toLocaleDateString('en-GB',{day:"2-digit",month:"2-digit",year:"2-digit"})}</span> <br/>
+                                        {/* Reference:&nbsp;{booking.id} */}
                                     </div>
                                 </div>            
                             </li>
                         </>
                     ))
                 }
-            </ul> */}
+            </ul>
 
       {show && (
         <Modal show={show} onHide={handleClose}>
