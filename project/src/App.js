@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import "./App.css";
+import 'react-calendar/dist/Calendar.css';
 
 import LandingPage from "./Components/LandingPage";
 import Home from "./Components/Home";
