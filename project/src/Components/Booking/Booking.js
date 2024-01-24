@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -20,8 +20,7 @@ export default function Booking() {
   const [dateValue, setDateValue] = useState(new Date());
   const [showAlert, setShowAlert] = useState(false);
   const [bookings, setBookings] = useState([]);
-  const [showDangerAlert,setShowDangerAlert] = useState(false);
-
+  const [showDangerAlert, setShowDangerAlert] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -61,20 +60,28 @@ export default function Booking() {
   const handleShow = () => {
     setShow(true);
   };
+
+  const fetchBookings = () => {
+    fetch(`http://localhost:3001/booking?propertyId=${propertyId}`)
+      .then((response) => response.json())
+      .then((record) => setBookings(record));
+  };
   const handleAddBooking = () => {
     const booking = {
       buyerId: buyersRef.current.value,
       propertyId,
       time: timeRef.current.value,
       date: dateValue,
+      propertyImage: propertyRecord.imageUrl,
     };
 
-    console.log(booking.date);
-    const bookingValidation = bookings.filter(x => x.time === booking.time && x.date === new Date(booking.date).toISOString())
+    const bookingValidation = bookings.filter(
+      (x) =>
+        x.time === booking.time &&
+        x.date === new Date(booking.date).toISOString()
+    );
 
-    console.log(bookingValidation);
-
-    if(bookingValidation.length > 0) {
+    if (bookingValidation.length > 0) {
       setShow(false);
       setShowDangerAlert(true);
       setDateValue(new Date());
@@ -90,7 +97,10 @@ export default function Booking() {
       .then(() => {
         setShow(false);
       })
-      .then(setShowAlert(true));
+      .then(() => {
+        setShowAlert(true);
+        fetchBookings();
+      });
   };
   return (
     <>
@@ -105,7 +115,7 @@ export default function Booking() {
         </Alert>
       )}
       {loading && <p>Loading.....</p>}
-      <h1>Book viewing slots</h1>
+      <h1 className="m-4">Book viewing slots</h1>
       <div className="text-end m-">
         <button className="btn btn-info btn-sm float-end" onClick={handleShow}>
           <i className="bi bi-house-add" />
@@ -117,27 +127,44 @@ export default function Booking() {
       <br />
 
       <ul className={"custom-list"}>
-                {
-                    bookings.map(booking => (
-                        <>
-                            <li key={booking.id}>
-                                <div className={"priceBlock forsale"}>
-                                    <span>{booking.status}</span><br/>
-                                    £{booking.price}
-                                </div>
-                                <div className="detailsBlock">
-                                    <div>
-                                        <span>Buyer: {buyers.filter(buyer => buyer.id === booking.buyerId).map(buyerDetails => (<span>{buyerDetails.firstName + ' ' + buyerDetails.surname}</span>)) }</span> <br/>
-                                        <span>Time: {booking.time}</span> <br/>
-                                        <span>Date: {new Date(booking.date).toLocaleDateString('en-GB',{day:"2-digit",month:"2-digit",year:"2-digit"})}</span> <br/>
-                                        {/* Reference:&nbsp;{booking.id} */}
-                                    </div>
-                                </div>            
-                            </li>
-                        </>
-                    ))
-                }
-            </ul>
+        {bookings.map((booking) => (
+          <>
+            <li key={booking.id}>
+              <img
+                src={booking.propertyImage}
+                alt={booking.id}
+                className="bookingImg"
+              />{" "}
+              <div className="detailsBlock">
+                <div>
+                  <span>
+                    Buyer:{" "}
+                    {buyers
+                      .filter((buyer) => buyer.id === booking.buyerId)
+                      .map((buyerDetails) => (
+                        <span>
+                          {buyerDetails.firstName + " " + buyerDetails.surname}
+                        </span>
+                      ))}
+                  </span>{" "}
+                  <br />
+                  <span>Time: {booking.time}</span> <br />
+                  <span>
+                    Date:{" "}
+                    {new Date(booking.date).toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "2-digit",
+                    })}
+                  </span>{" "}
+                  <br />
+                  {/* Reference:&nbsp;{booking.id} */}
+                </div>
+              </div>
+            </li>
+          </>
+        ))}
+      </ul>
 
       {show && (
         <Modal show={show} onHide={handleClose}>
@@ -174,7 +201,7 @@ export default function Booking() {
                 <Calendar onChange={setDateValue} value={dateValue} />
               </FormGroup>
 
-              <div className="form-group col mt-4">
+              <div className="form-group col mt-4 mb-4">
                 <label htmlFor="timeSlot">Select Time</label>
                 <select className="form-select" ref={timeRef}>
                   <option value="9am-10am">9am-10am</option>

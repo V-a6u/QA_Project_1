@@ -307,9 +307,10 @@
       "bathrooms": "2",
       "garden": "true",
       "sellerId": 1,
-      "status": "FOR SALE",
+      "status": "SOLD",
       "id": "16",
-      "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif"
+      "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif",
+      "buyerId": "1"
     },
     {
       "address": "jhgjh",
@@ -476,67 +477,36 @@
   ],
   "booking": [
     {
-      "id": "ef6a",
-      "buyerId": "7",
-      "propertyId": "4",
-      "time": "12pm-1pm",
-      "date": "2024-01-25T00:00:00.000Z"
-    },
-    {
-      "id": "b068",
-      "buyerId": "1",
-      "propertyId": "4",
-      "time": "2pm-3pm",
-      "date": "2024-01-25T00:00:00.000Z"
-    },
-    {
-      "id": "861d",
-      "buyerId": "1",
-      "propertyId": "4",
-      "time": "2pm-3pm",
-      "date": "2024-01-24T11:25:44.482Z"
-    },
-    {
-      "id": "e1df",
-      "buyerId": "1",
-      "propertyId": "4",
-      "time": "3pm-4pm",
-      "date": "2024-01-31T00:00:00.000Z"
-    },
-    {
-      "id": "6eb8",
-      "buyerId": "1",
-      "propertyId": "4",
-      "time": "1pm-2pm",
-      "date": "2024-01-25T00:00:00.000Z"
-    },
-    {
-      "id": "1a7b",
-      "buyerId": "1",
-      "propertyId": "4",
-      "time": "12pm-1pm",
-      "date": "2024-01-27T00:00:00.000Z"
-    },
-    {
-      "id": "53d8",
+      "id": "6e57",
       "buyerId": "1",
       "propertyId": "4",
       "time": "9am-10am",
-      "date": "2024-01-09T00:00:00.000Z"
+      "date": "2024-01-24T15:04:33.820Z",
+      "propertyImage": "https://images.pexels.com/photos/3935350/pexels-photo-3935350.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "21e0",
-      "buyerId": "4",
-      "propertyId": "6",
-      "time": "4pm-5pm",
-      "date": "2024-01-26T00:00:00.000Z"
+      "id": "49fd",
+      "buyerId": "1",
+      "propertyId": "4",
+      "time": "9am-10am",
+      "date": "2024-01-25T00:00:00.000Z",
+      "propertyImage": "https://images.pexels.com/photos/3935350/pexels-photo-3935350.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "53ca",
-      "buyerId": "4",
-      "propertyId": "6",
-      "time": "4pm-5pm",
-      "date": "2024-01-26T00:00:00.000Z"
+      "id": "dddd",
+      "buyerId": "1",
+      "propertyId": "4",
+      "time": "9am-10am",
+      "date": "2024-01-21T00:00:00.000Z",
+      "propertyImage": "https://images.pexels.com/photos/3935350/pexels-photo-3935350.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "286f",
+      "buyerId": "1",
+      "propertyId": "4",
+      "time": "9am-10am",
+      "date": "2024-02-03T00:00:00.000Z",
+      "propertyImage": "https://images.pexels.com/photos/3935350/pexels-photo-3935350.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ]
 }
