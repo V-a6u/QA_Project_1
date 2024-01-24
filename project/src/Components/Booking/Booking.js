@@ -20,6 +20,7 @@ export default function Booking() {
   const [dateValue, setDateValue] = useState(new Date());
   const [showAlert, setShowAlert] = useState(false);
   const [bookings, setBookings] = useState([]);
+  const [showDangerAlert,setShowDangerAlert] = useState(false);
 
 
   useEffect(() => {
@@ -68,6 +69,18 @@ export default function Booking() {
       date: dateValue,
     };
 
+    console.log(booking.date);
+    const bookingValidation = bookings.filter(x => x.time === booking.time && x.date === new Date(booking.date).toISOString())
+
+    console.log(bookingValidation);
+
+    if(bookingValidation.length > 0) {
+      setShow(false);
+      setShowDangerAlert(true);
+      setDateValue(new Date());
+      return;
+    }
+
     fetch("http://localhost:3001/booking", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -84,6 +97,11 @@ export default function Booking() {
       {showAlert && (
         <Alert className="m-4" key="success" variant="success" dismissible>
           New booking added
+        </Alert>
+      )}
+      {showDangerAlert && (
+        <Alert className="m-4" key="danger" variant="danger" dismissible>
+          The time slot is not available. Please try again.
         </Alert>
       )}
       {loading && <p>Loading.....</p>}

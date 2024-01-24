@@ -523,6 +523,20 @@
       "propertyId": "4",
       "time": "9am-10am",
       "date": "2024-01-09T00:00:00.000Z"
+    },
+    {
+      "id": "21e0",
+      "buyerId": "4",
+      "propertyId": "6",
+      "time": "4pm-5pm",
+      "date": "2024-01-26T00:00:00.000Z"
+    },
+    {
+      "id": "53ca",
+      "buyerId": "4",
+      "propertyId": "6",
+      "time": "4pm-5pm",
+      "date": "2024-01-26T00:00:00.000Z"
     }
   ]
 }
