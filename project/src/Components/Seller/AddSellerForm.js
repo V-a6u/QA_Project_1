@@ -61,7 +61,7 @@ export default function AddSellerForm(props){
                 "address": addressRef.current.value,
                 "postcode": postcodeRef.current.value,
                 "phone": phoneRef.current.value,
-                "properties" : []
+                //"properties" : []
             });
             clearForm();
         }
@@ -89,7 +89,7 @@ export default function AddSellerForm(props){
                 <div className="row">
                     <div className="form-group col-md-6">
                         <label>First Name</label>
-                        <input type="text" className="form-control" id={"fname"} ref={firstNameRef} />
+                        <input type="text" className="form-control" id={"fname"} ref={firstNameRef} data-cy="fname"/>
                         {
                             firstNameError ?
                                 <div className={"text-danger"}><i className={"bi bi-exclamation-circle"}/>First Name cannot be blank </div>
@@ -98,7 +98,7 @@ export default function AddSellerForm(props){
                     </div>
                     <div className="form-group col-md-6">
                         <label >Surname</label>
-                        <input type="text" className="form-control" id={"sname"} ref={surnameRef}/>
+                        <input type="text" className="form-control" id={"sname"} ref={surnameRef} data-cy="lname"/>
                         {
                             surnameError ?
                                 <div className={"text-danger"}><i className={"bi bi-exclamation-circle"}/>Surname cannot be blank </div>
@@ -108,7 +108,7 @@ export default function AddSellerForm(props){
                 </div>
                 <div className="form-group">
                     <label>Address</label>
-                    <input type="text" className="form-control" id={"sellerAddress"} ref={addressRef}/>
+                    <input type="text" className="form-control" id={"sellerAddress"} ref={addressRef} data-cy="address"/>
                     {
                         addressError ?
                             <div className={"text-danger"}><i className={"bi bi-exclamation-circle"}/>Address cannot be blank </div>
@@ -118,7 +118,7 @@ export default function AddSellerForm(props){
                 <div className="row">
                     <div className="form-group col-md-6">
                         <label>Postcode</label>
-                        <input type="text" className="form-control" id={"sellerPostcode"} ref={postcodeRef}/>
+                        <input type="text" className="form-control" id={"sellerPostcode"} ref={postcodeRef} data-cy="postcode"/>
                         {
                             postcodeError ?
                                 <div className={"text-danger"}><i className={"bi bi-exclamation-circle"}/>Postcode cannot be blank </div>
@@ -127,7 +127,7 @@ export default function AddSellerForm(props){
                     </div>
                     <div className="form-group col-md-6">
                         <label>Phone</label>
-                        <input type="text" className="form-control" id={"sellerPhone"} ref={phoneRef}/>
+                        <input type="text" className="form-control" id={"sellerPhone"} ref={phoneRef} data-cy="phone"/>
                         {
                             phoneError ?
                                 <div className={"text-danger"}><i className={"bi bi-exclamation-circle"}/>Phone number cannot be blank </div>
@@ -136,7 +136,7 @@ export default function AddSellerForm(props){
                     </div>
                 </div>
                 <div className="text-end">
-                    <button type={"submit"} className="btn btn-primary custom-button" onClick={handleSubmit}>
+                    <button type={"submit"} className="btn btn-primary custom-button" onClick={handleSubmit} data-cy="addNewSeller">
                         <i className="bi bi-person-add"/>&nbsp;Add New Seller
                     </button>
                 </div>

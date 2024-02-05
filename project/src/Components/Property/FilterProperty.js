@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import { useRef } from "react";
 
 export default function FilterProperty(props){
     const searchHandler = props.searchHandler;
@@ -57,7 +57,7 @@ export default function FilterProperty(props){
                     <div className="row">
                         <div className="form-group col">
                             <label htmlFor="propertyType">Type</label>
-                            <select className="form-select" ref={typeRef}>
+                            <select className="form-select" ref={typeRef} data-cy="property-type-filter">
                                 <option value="Any">Any</option>
                                 <option value="DETACHED">Detached</option>
                                 <option value="SEMI">Semi</option>
@@ -66,7 +66,7 @@ export default function FilterProperty(props){
                         </div>
                         <div className="form-group col">
                             <label htmlFor="propertyPrice">Price</label>
-                            <select className="form-select" ref={priceRef}>
+                            <select className="form-select" ref={priceRef} data-cy="property-price-filter">
                                 <option value="0">Any</option>
                                 <option value="50000">Up to 50000</option>
                                 <option value="100000">Up to 100000</option>
@@ -77,7 +77,7 @@ export default function FilterProperty(props){
                         </div>
                         <div className="form-group col">
                             <label htmlFor="numberOfBedrooms">Bedrooms</label>
-                            <select className="form-select" ref={bedroomsRef}>
+                            <select className="form-select" ref={bedroomsRef} data-cy="property-bedroom-filter">
                                 <option value="0">Any</option>
                                 <option value="1">Minimum 1</option>
                                 <option value="2">Minimum 2</option>
@@ -88,7 +88,7 @@ export default function FilterProperty(props){
                         </div>
                         <div className="form-group col">
                             <label htmlFor="numberOfBathrooms">Bathrooms</label>
-                            <select className="form-select" ref={bathroomsRef}>
+                            <select className="form-select" ref={bathroomsRef} data-cy="property-bathroom-filter">
                                 <option value="0">Any</option>
                                 <option value="1">Minimum 1</option>
                                 <option value="2">Minimum 2</option>
@@ -97,7 +97,7 @@ export default function FilterProperty(props){
                         </div>
                         <div className="form-group col">
                             <label htmlFor="numberOfGardens">Garden</label>
-                            <select className="form-select" ref={gardenRef}>
+                            <select className="form-select" ref={gardenRef} data-cy="property-garden-filter">
                                 <option value="0">Any</option>
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
@@ -109,7 +109,7 @@ export default function FilterProperty(props){
                             <i className="bi bi-arrow-left-circle"></i>&nbsp;Clear
                         </button>
                         &nbsp;
-                        <button type="button" className="btn btn-primary" onClick={() => doSearch()}>
+                        <button type="button" className="btn btn-primary" onClick={() => doSearch()} data-cy="find-property">
                             <i className="bi bi-search"></i>&nbsp;Find Properties
                         </button>
                     </div>

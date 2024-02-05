@@ -4,8 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import SellerForm from './AddSellerForm';
-import SellerProperty from './SellerProperty';
-
 import "./Seller.css";
 
 export default function Seller(){
@@ -39,9 +37,9 @@ export default function Seller(){
             //"properties" : []
         }
 
-        fetch(`https://localhost:3001/seller/${sellerId}`, {
+        fetch(`http://localhost:3001/seller/${sellerId}`, {
             method: "PUT",
-            headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},
+            headers: {"Content-Type": "application/json"}, //, "Authorization" : `Bearer ${token}`},
             body: JSON.stringify(newSellerDetails)
         })
             .then(setShow(false))
@@ -66,7 +64,7 @@ export default function Seller(){
     //Loaded on default
     useEffect(() => {
         setLoading(true);
-        fetch("https://localhost:3001/seller/")
+        fetch("http://localhost:3001/seller/")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -90,9 +88,9 @@ export default function Seller(){
     // };
 
     const sellerAddHandler = (newSeller) => {
-        fetch("https://localhost:3001/seller", {
+        fetch("http://localhost:3001/seller", {
             method: "POST",
-            headers: {"Content-Type": "application/json", "Authorization" : `Bearer ${token}`},
+            headers: {"Content-Type": "application/json"}, //, "Authorization" : `Bearer ${token}`},
             body: JSON.stringify(newSeller)
         })
             .then((response) => response.json())
@@ -106,7 +104,7 @@ export default function Seller(){
 
 
     function FetchSellers() {
-        fetch("https://localhost:3001/seller")
+        fetch("http://localhost:3001/seller")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -119,9 +117,9 @@ export default function Seller(){
         const confirmDelete = window.confirm(confirmMessage);
 
         if(confirmDelete) {
-            fetch(`https://localhost:3001/seller/${sellerId}`, {
-                method: "DELETE",
-                headers: {"Authorization" : `Bearer ${token}`}
+            fetch(`http://localhost:3001/seller/${sellerId}`, {
+                method: "DELETE"
+                //headers: {"Authorization" : `Bearer ${token}`}
             })
                 .then((sellerToDelete) => { dispatch({type: "REMOVE", payload: sellerToDelete}) })
                 .then(alert("Seller deleted"))
@@ -130,6 +128,7 @@ export default function Seller(){
         }
 
     }
+    
 
     return(
         <>
@@ -148,7 +147,7 @@ export default function Seller(){
             <ul className={"custom-list"}>
                 {
                     sellersList.map(seller => (
-                        <li key={seller.id}>
+                        <li key={seller.id} data-cy="sellerDetails">
                             <div className="sellerBlock bg-dark-subtle"> {seller.firstName}&nbsp;{seller.surname}</div>
                             <div>
                                 Address: {seller.address}&nbsp;{seller.postcode} <br/>

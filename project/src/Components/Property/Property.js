@@ -2,7 +2,6 @@ import React, {useEffect, useReducer, useState} from "react";
 import {Link} from "react-router-dom";
 
 import "./Property.css";
-import houseImage from "../Property/pexels-binyamin-mellish-186077.jpg"
 import FilterProperty from "./FilterProperty";
 
 export default function Property(){
@@ -38,6 +37,7 @@ export default function Property(){
                 return "sold";
             case "WITHDRAWN" :
                 return "withdrawn";
+            default: return;    
         }
     };
 
@@ -81,16 +81,16 @@ export default function Property(){
                                 </div>
                                 <div className={"priceBlock " + iconClassForStatus(property.status)}>
                                     <span>{property.status}</span><br/>
-                                    £{property.price}
+                                    <div data-cy="property-price">£{property.price}</div>
                                 </div>
                                 <div className="detailsBlock">
                                     <div>Address: {property.address} <br/>
                                         {property.postcode}</div>
                                     <div>
-                                        <span>Type: {toCamelCase(property.type)}</span> <br/>
-                                        <span>Bedrooms: {property.bedroom}</span> <br/>
-                                        <span>Bathrooms: {property.bathroom}</span> <br/>
-                                        <span>Garden: {Number(property.garden) ? "Yes" : "No"}</span> <br/>
+                                        <span data-cy="property-type">Type: {toCamelCase(property.type)}</span> <br/>
+                                        <span data-cy="property-bedroom">Bedrooms: {property.bedroom}</span> <br/>
+                                        <span data-cy="property-bathroom">Bathrooms: {property.bathroom}</span> <br/>
+                                        <span data-cy="property-garden">Garden: {Number(property.garden) ? "Yes" : "No"}</span> <br/>
                                         Reference:&nbsp;{property.id}
                                     </div>
                                 </div>
