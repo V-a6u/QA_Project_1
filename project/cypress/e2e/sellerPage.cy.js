@@ -1,10 +1,9 @@
 //add a new seller
 describe("Add a new seller", () => {
-    beforeEach("Visit the properties page", () => {
+    beforeEach("Visit the seller page", () => {
         cy.visit("http://localhost:3000/seller");
 
         //Aliases for filter categories
-        cy.get("[data-cy=addNewSeller]").as("AddNewSellerBtn")
         cy.get("[data-cy=sellerDetails]").as("SellerDetails");
 
     });
@@ -17,6 +16,7 @@ describe("Add a new seller", () => {
         cy.get("[data-cy=postcode]").type("CyPostcode");
         cy.get("[data-cy=phone]").type("Cy-01234");
 
+        cy.get("[data-cy=addNewSeller]").as("AddNewSellerBtn");
         cy.get("@AddNewSellerBtn").click();
 
         //Check if the seller has been added

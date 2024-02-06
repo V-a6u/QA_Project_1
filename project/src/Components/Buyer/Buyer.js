@@ -2,11 +2,9 @@ import React, {useEffect, useReducer, useRef, useState} from "react";
 import {Link} from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Accordion from 'react-bootstrap/Accordion';
 
 import "./Buyer.css"
 import AddBuyerForm from "./AddBuyerForm";
-import BuyerProfile from "./BuyerProfile";
 
 export default function Buyer(){
     const [loading, setLoading] = useState(false);
@@ -135,7 +133,7 @@ export default function Buyer(){
 
 
             <div>
-                <ul className={"custom-list"}>
+                <ul className={"custom-list"} data-cy="buyerDetails">
                     {
                         buyersList.map( (buyer) =>
                         <>
