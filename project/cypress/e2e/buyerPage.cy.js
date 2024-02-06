@@ -25,7 +25,7 @@ describe("Add a new buyer", () => {
     });
 
     it("edits the buyer profile", () => {
-
+        
     });
 
     it("manages buyer properties", () => {

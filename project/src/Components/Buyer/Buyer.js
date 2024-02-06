@@ -168,15 +168,15 @@ export default function Buyer(){
                     <Modal.Body>
                         <form className={"bg-light text-dark"}>
                             <label>First Name</label>
-                            <input type="text" className="form-control" id={"fname"} defaultValue={buyerToEdit.firstName} ref={firstNameRef} />
+                            <input type="text" className="form-control" id={"fname"} defaultValue={buyerToEdit.firstName} ref={firstNameRef} data-cy="profilefname"/>
                             <label>Surname</label>
-                            <input type="text" className="form-control" id={"sname"} defaultValue={buyerToEdit.surname}  ref={surnameRef} />
+                            <input type="text" className="form-control" id={"sname"} defaultValue={buyerToEdit.surname}  ref={surnameRef} data-cy="profilelname"/>
                             <label>Address</label>
-                            <input type="text" className="form-control" id={"address"} defaultValue={buyerToEdit.address} ref={addressRef} />
+                            <input type="text" className="form-control" id={"address"} defaultValue={buyerToEdit.address} ref={addressRef} data-cy="profileaddress"/>
                             <label>Postcode</label>
-                            <input type="text" className="form-control" id={"postcode"} defaultValue={buyerToEdit.postcode} ref={postcodeRef} />
+                            <input type="text" className="form-control" id={"postcode"} defaultValue={buyerToEdit.postcode} ref={postcodeRef} data-cy="profilepostcode"/>
                             <label>Phone</label>
-                            <input type="text" className="form-control" id={"phone"} defaultValue={buyerToEdit.phone} ref={phoneRef} />
+                            <input type="text" className="form-control" id={"phone"} defaultValue={buyerToEdit.phone} ref={phoneRef} data-cy="profilephone"/>
                         </form>
 
                     </Modal.Body>
