@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "tsc": "tsc"
+    "install-cypress": "set CYPRESS_INSTALL_BINARY=%USERPROFILE%\\Downloads\\cypress.zip && npm install -force"
   },
   "eslintConfig": {
     "extends": [
@@ -52,7 +52,6 @@
     ]
   },
   "devDependencies": {
-    "jest": "^27.5.1",
-    "typescript": "^5.3.3"
+    "jest": "^27.5.1"
   }
 }

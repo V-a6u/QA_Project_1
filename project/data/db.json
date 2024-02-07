@@ -1,7 +1,23 @@
 {
   "seller": [
     {
-      "id": "3",
+      "id": 1,
+      "firstName": "John",
+      "surname": "Doe",
+      "address": "1 High Street, Cardiff",
+      "postcode": "CF1 1AA",
+      "phone": "01234567890"
+    },
+    {
+      "id": 2,
+      "firstName": "Anna",
+      "surname": "Smith",
+      "address": "2 Main Street, Cardiff",
+      "postcode": "CF1 1AB",
+      "phone": "01234567891"
+    },
+    {
+      "id": 3,
       "firstName": "Peter",
       "surname": "Jones",
       "address": "3 Low Street, Cardiff",
@@ -9,7 +25,7 @@
       "phone": "01234567892"
     },
     {
-      "id": "4",
+      "id": 4,
       "firstName": "Karen",
       "surname": "Slater",
       "address": "4 High Street, Cardiff",
@@ -17,7 +33,7 @@
       "phone": "01234567893"
     },
     {
-      "id": "5",
+      "id": 5,
       "firstName": "Jade",
       "surname": "Huang",
       "address": "5 Main Street, Beijing",
@@ -25,7 +41,7 @@
       "phone": "1234567890"
     },
     {
-      "id": "6",
+      "id": 6,
       "firstName": "Andy",
       "surname": "Smith",
       "address": "6 Broad Street, Cardiff",
@@ -33,7 +49,7 @@
       "phone": "01234567894"
     },
     {
-      "id": "7",
+      "id": 7,
       "firstName": "Sarah",
       "surname": "Miller",
       "address": "7 High Street, Swansea",
@@ -41,7 +57,7 @@
       "phone": "01234567895"
     },
     {
-      "id": "8",
+      "id": 8,
       "firstName": "Chris",
       "surname": "Roberts",
       "address": "8 Main Street, Cardiff",
@@ -49,7 +65,7 @@
       "phone": "01234567896"
     },
     {
-      "id": "9",
+      "id": 9,
       "firstName": "Lucy",
       "surname": "Brown",
       "address": "9 Low Street, Cardiff",
@@ -57,7 +73,7 @@
       "phone": "01234567897"
     },
     {
-      "id": "10",
+      "id": 10,
       "firstName": "Tom",
       "surname": "Taylor",
       "address": "10 High Street, Cardiff",
@@ -65,7 +81,7 @@
       "phone": "01234567898"
     },
     {
-      "id": "11",
+      "id": 11,
       "firstName": "Sophie",
       "surname": "Williams",
       "address": "11 Main Street, Cardiff",
@@ -73,7 +89,7 @@
       "phone": "01234567899"
     },
     {
-      "id": "12",
+      "id": 12,
       "firstName": "David",
       "surname": "Evans",
       "address": "12 Low Street, Cardiff",
@@ -81,7 +97,7 @@
       "phone": "01234567810"
     },
     {
-      "id": "13",
+      "id": 13,
       "firstName": "Emma",
       "surname": "Clark",
       "address": "13 Broad Street, Cardiff",
@@ -89,17 +105,25 @@
       "phone": "01234567811"
     },
     {
-      "id": "14",
+      "id": 14,
       "firstName": "Mark",
       "surname": "White",
       "address": "14 High Street, Cardiff",
       "postcode": "CF1 1AM",
       "phone": "01234567812"
+    },
+    {
+      "id": 15,
+      "firstName": "Olivia",
+      "surname": "Lee",
+      "address": "15 Main Street, Cardiff",
+      "postcode": "CF1 1AN",
+      "phone": "01234567813"
     }
   ],
   "property": [
     {
-      "id": "1",
+      "id": 1,
       "address": "34 OK Place, OK Town",
       "postcode": "OK1 1OK",
       "type": "DETACHED",
@@ -113,7 +137,7 @@
       "imageUrl": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "2",
+      "id": 2,
       "address": "22 Maple Street, Maple City",
       "postcode": "MC1 1MC",
       "type": "SEMI",
@@ -126,7 +150,7 @@
       "imageUrl": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "3",
+      "id": 3,
       "address": "8 Rose Street, Roseville",
       "postcode": "RV1 2RV",
       "type": "APARTMENT",
@@ -140,7 +164,7 @@
       "imageUrl": "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "4",
+      "id": 4,
       "address": "15 Elm Street, Elmville",
       "postcode": "EV1 1EV",
       "type": "DETACHED",
@@ -153,7 +177,7 @@
       "imageUrl": "https://images.pexels.com/photos/3935350/pexels-photo-3935350.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "5",
+      "id": 5,
       "address": "3 Oak Street, Oakton",
       "postcode": "OT1 1OT",
       "type": "SEMI",
@@ -167,7 +191,7 @@
       "imageUrl": "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "6",
+      "id": 6,
       "address": "10 Pine Street, Pinewood",
       "postcode": "PW1 1PW",
       "type": "APARTMENT",
@@ -180,7 +204,7 @@
       "imageUrl": "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "7",
+      "id": 7,
       "address": "7 Birch Street, Birchville",
       "postcode": "BV1 1BV",
       "type": "SEMI",
@@ -194,7 +218,7 @@
       "imageUrl": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "8",
+      "id": 8,
       "address": "29 Cedar Street, Cedartown",
       "postcode": "CT1 1CT",
       "type": "DETACHED",
@@ -207,7 +231,7 @@
       "imageUrl": "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "9",
+      "id": 9,
       "address": "12 Willow Street, Willowvale",
       "postcode": "WV1 1WV",
       "type": "APARTMENT",
@@ -221,7 +245,7 @@
       "imageUrl": "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "10",
+      "id": 10,
       "address": "18 Fir Street, Firfield",
       "postcode": "FF1 1FF",
       "type": "SEMI",
@@ -234,7 +258,7 @@
       "imageUrl": "https://images.pexels.com/photos/3935350/pexels-photo-3935350.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "11",
+      "id": 11,
       "address": "5 Redwood Street, Redwood City",
       "postcode": "RC1 1RC",
       "type": "DETACHED",
@@ -248,7 +272,7 @@
       "imageUrl": "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "12",
+      "id": 12,
       "address": "22 Maple Street, Maple City",
       "postcode": "MC1 1MC",
       "type": "SEMI",
@@ -261,7 +285,7 @@
       "imageUrl": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      "id": "13",
+      "id": 13,
       "address": "8 Rose Street, Roseville",
       "postcode": "RV1 2RV",
       "type": "APARTMENT",
@@ -284,7 +308,7 @@
         "id": "1"
       },
       "status": "FOR SALE",
-      "id": "14",
+      "id": 14,
       "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif"
     },
     {
@@ -297,7 +321,7 @@
       "garden": "true",
       "sellerId": 1,
       "status": "FOR SALE",
-      "id": "16",
+      "id": 16,
       "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif"
     },
     {
@@ -311,12 +335,12 @@
       "sellerId": 1,
       "status": "FOR SALE",
       "imageUrl": "https://emacplan.co.za/wp-content/themes/homely/images/property-img-default.gif",
-      "id": "17"
+      "id": 17
     }
   ],
   "buyer": [
     {
-      "id": "1",
+      "id": 1,
       "firstName": "Alice",
       "surname": "Johnson",
       "address": "42 Pen-y-lan Road, Cardiff",
@@ -324,7 +348,7 @@
       "phone": "01234567890"
     },
     {
-      "id": "2",
+      "id": 2,
       "firstName": "David",
       "surname": "Williams",
       "address": "100 Magor Road, Newport",
@@ -332,7 +356,7 @@
       "phone": "01234567891"
     },
     {
-      "id": "3",
+      "id": 3,
       "firstName": "Sophie",
       "surname": "Clark",
       "address": "Very Rich Street, London",
@@ -340,7 +364,7 @@
       "phone": "01234567892"
     },
     {
-      "id": "4",
+      "id": 4,
       "firstName": "Oliver",
       "surname": "Smith",
       "address": "24 Meadow Lane, Bristol",
@@ -348,7 +372,7 @@
       "phone": "01234567893"
     },
     {
-      "id": "5",
+      "id": 5,
       "firstName": "Emily",
       "surname": "Taylor",
       "address": "5 Woodland Way, Manchester",
@@ -356,7 +380,7 @@
       "phone": "01234567894"
     },
     {
-      "id": "6",
+      "id": 6,
       "firstName": "Charlotte",
       "surname": "Brown",
       "address": "8 Coral Street, Brighton",
@@ -364,7 +388,7 @@
       "phone": "01234567895"
     },
     {
-      "id": "7",
+      "id": 7,
       "firstName": "Jack",
       "surname": "Miller",
       "address": "10 Park Lane, Edinburgh",
@@ -372,7 +396,7 @@
       "phone": "01234567896"
     },
     {
-      "id": "8",
+      "id": 8,
       "firstName": "Sophia",
       "surname": "Jones",
       "address": "15 Cheese Street, Glasgow",
@@ -380,7 +404,7 @@
       "phone": "01234567897"
     },
     {
-      "id": "9",
+      "id": 9,
       "firstName": "James",
       "surname": "Roberts",
       "address": "3 Catnip Close, Liverpool",
@@ -388,7 +412,7 @@
       "phone": "01234567898"
     },
     {
-      "id": "10",
+      "id": 10,
       "firstName": "Grace",
       "surname": "Turner",
       "address": "12 Burrow Avenue, Nottingham",
@@ -396,7 +420,7 @@
       "phone": "01234567899"
     },
     {
-      "id": "11",
+      "id": 11,
       "firstName": "William",
       "surname": "Hill",
       "address": "7 Paw Prints Street, Leeds",
@@ -404,7 +428,7 @@
       "phone": "01234567810"
     },
     {
-      "id": "12",
+      "id": 12,
       "firstName": "Ava",
       "surname": "Evans",
       "address": "22 Feather Lane, Newcastle",
@@ -412,12 +436,28 @@
       "phone": "01234567811"
     },
     {
-      "id": "13",
+      "id": 13,
       "firstName": "Liam",
       "surname": "White",
       "address": "2 Yarn Road, Southampton",
       "postcode": "SO1 4KN",
       "phone": "01234567812"
+    },
+    {
+      "id": 14,
+      "firstName": "Ella",
+      "surname": "Horse",
+      "address": "18 Stable Street, Cambridge",
+      "postcode": "CB1 2HS",
+      "phone": "01234567813"
+    },
+    {
+      "id": 15,
+      "firstName": "Noah",
+      "surname": "Lee",
+      "address": "9 Whisker Way, Oxford",
+      "postcode": "OX1 1PA",
+      "phone": "01234567814"
     }
   ],
   "booking": [
@@ -425,85 +465,85 @@
       "buyerId": 1,
       "propertyId": 2,
       "time": "2023-02-28T08:00:00.038Z",
-      "id": "2"
+      "id": 2
     },
     {
       "buyerId": 2,
       "propertyId": 3,
       "time": "2023-03-01T10:30:00.045Z",
-      "id": "3"
+      "id": 3
     },
     {
       "buyerId": 3,
       "propertyId": 1,
       "time": "2023-03-02T13:15:00.021Z",
-      "id": "4"
+      "id": 4
     },
     {
       "buyerId": 4,
       "propertyId": 5,
       "time": "2023-03-03T15:45:00.012Z",
-      "id": "5"
+      "id": 5
     },
     {
       "buyerId": 5,
       "propertyId": 8,
       "time": "2023-03-04T09:00:00.030Z",
-      "id": "6"
+      "id": 6
     },
     {
       "buyerId": 6,
       "propertyId": 10,
       "time": "2023-03-05T11:30:00.018Z",
-      "id": "7"
+      "id": 7
     },
     {
       "buyerId": 8,
       "propertyId": 15,
       "time": "2023-03-07T16:30:00.027Z",
-      "id": "9"
+      "id": 9
     },
     {
       "buyerId": 9,
       "propertyId": 7,
       "time": "2023-03-08T12:00:00.035Z",
-      "id": "10"
+      "id": 10
     },
     {
       "buyerId": 10,
       "propertyId": 11,
       "time": "2023-03-09T09:15:00.040Z",
-      "id": "11"
+      "id": 11
     },
     {
       "buyerId": 11,
       "propertyId": 13,
       "time": "2023-03-10T17:00:00.015Z",
-      "id": "12"
+      "id": 12
     },
     {
       "buyerId": 12,
       "propertyId": 4,
       "time": "2023-03-11T08:45:00.032Z",
-      "id": "13"
+      "id": 13
     },
     {
       "buyerId": 13,
       "propertyId": 6,
       "time": "2023-03-12T10:00:00.028Z",
-      "id": "14"
+      "id": 14
     },
     {
       "buyerId": 14,
       "propertyId": 9,
       "time": "2023-03-13T14:30:00.022Z",
-      "id": "15"
+      "id": 15
     },
     {
       "buyerId": 15,
       "propertyId": 14,
       "time": "2023-03-14T16:15:00.020Z",
-      "id": "16"
+      "id": 16
     },
     {
       "buyer": {
@@ -513,7 +553,7 @@
         "id": 12
       },
       "time": "2023-12-05T08:00:00.000Z",
-      "id": "17"
+      "id": 17
     },
     {
       "buyer": {
@@ -523,7 +563,7 @@
         "id": 12
       },
       "time": "2023-12-05T08:00:00.000Z",
-      "id": "18"
+      "id": 18
     },
     {
       "buyer": {
@@ -533,7 +573,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "19"
+      "id": 19
     },
     {
       "buyer": {
@@ -543,7 +583,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "20"
+      "id": 20
     },
     {
       "buyer": {
@@ -553,7 +593,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "21"
+      "id": 21
     },
     {
       "buyer": {
@@ -563,7 +603,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "22"
+      "id": 22
     },
     {
       "buyer": {
@@ -573,7 +613,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "23"
+      "id": 23
     },
     {
       "buyer": {
@@ -583,7 +623,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "24"
+      "id": 24
     },
     {
       "buyer": {
@@ -593,7 +633,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "25"
+      "id": 25
     },
     {
       "buyer": {
@@ -603,7 +643,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "26"
+      "id": 26
     },
     {
       "buyer": {
@@ -613,7 +653,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "27"
+      "id": 27
     },
     {
       "buyer": {
@@ -623,7 +663,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "28"
+      "id": 28
     },
     {
       "buyer": {
@@ -633,7 +673,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "29"
+      "id": 29
     },
     {
       "buyer": {
@@ -643,7 +683,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "30"
+      "id": 30
     },
     {
       "buyer": {
@@ -653,129 +693,7 @@
         "id": 12
       },
       "time": "2023-12-05T16:00:00.000Z",
-      "id": "31"
-    }
-  ],
-  "user": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "pass123"
-    },
-    {
-      "id": "2",
-      "username": "ayo",
-      "password": "ayopass"
-    },
-    {
-      "id": "3",
-      "username": "vasu",
-      "password": "vasupass"
-    },
-    {
-      "id": "7bf9",
-      "username": "test",
-      "password": "test123"
-    },
-    {
-      "id": "6901",
-      "username": "yui",
-      "password": "yui"
-    },
-    {
-      "id": "b3a7",
-      "username": "yiu",
-      "password": "i"
-    },
-    {
-      "id": "1c5c",
-      "username": "vas12",
-      "password": "yu"
-    },
-    {
-      "id": "7bdc",
-      "username": "u",
-      "password": "u"
-    },
-    {
-      "id": "138f",
-      "username": "p",
-      "password": "p"
-    },
-    {
-      "id": "5d9a",
-      "username": "kl",
-      "password": "kl"
-    },
-    {
-      "id": "0e72",
-      "username": "admin",
-      "password": "ty"
-    },
-    {
-      "id": "dbfa",
-      "username": "admin",
-      "password": "io"
-    },
-    {
-      "id": "96cd",
-      "username": "",
-      "password": ""
-    },
-    {
-      "id": "2f59",
-      "username": "admin",
-      "password": "io"
-    },
-    {
-      "id": "dd7b",
-      "username": "op",
-      "password": "op"
-    },
-    {
-      "id": "047a",
-      "username": "admin",
-      "password": "kl"
-    },
-    {
-      "id": "6d6d",
-      "username": "op",
-      "password": "op"
-    },
-    {
-      "id": "e456",
-      "username": "nm",
-      "password": "nm"
-    },
-    {
-      "id": "2fb7",
-      "username": "bn",
-      "password": "bn"
-    },
-    {
-      "id": "5c22",
-      "username": "vb",
-      "password": "vb"
-    },
-    {
-      "id": "3d76",
-      "username": "cv",
-      "password": "cv"
-    },
-    {
-      "id": "ef99",
-      "username": "ty",
-      "password": "ty"
-    },
-    {
-      "id": "a0d1",
-      "username": "ty1",
-      "password": "ty1"
-    },
-    {
-      "id": "21de",
-      "username": "oiui",
-      "password": "op"
+      "id": 31
     }
   ]
 }

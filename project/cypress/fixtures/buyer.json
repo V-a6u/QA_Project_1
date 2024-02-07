@@ -1,0 +1,36 @@
+{
+  "buyer": [
+    {
+      "id": 1,
+      "firstName": "Alice",
+      "surname": "Johnson",
+      "address": "42 Pen-y-lan Road, Cardiff",
+      "postcode": "CA1 8RR",
+      "phone": "01234567890"
+    },
+    {
+      "id": 2,
+      "firstName": "David",
+      "surname": "Williams",
+      "address": "100 Magor Road, Newport",
+      "postcode": "NP1 2LL",
+      "phone": "01234567891"
+    },
+    {
+      "id": 3,
+      "firstName": "Sophie",
+      "surname": "Clark",
+      "address": "Very Rich Street, London",
+      "postcode": "W1",
+      "phone": "01234567892"
+    },
+    {
+      "id": 4,
+      "firstName": "Oliver",
+      "surname": "Smith",
+      "address": "24 Meadow Lane, Bristol",
+      "postcode": "BS1 3AB",
+      "phone": "01234567893"
+    }
+  ]
+}
