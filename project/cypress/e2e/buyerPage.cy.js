@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe("Add a new buyer", () => {
   beforeEach("Visit the buyer page", () => {
     cy.visit("http://localhost:3000/buyer");
