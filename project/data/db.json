@@ -119,14 +119,6 @@
       "address": "15 Main Street, Cardiff",
       "postcode": "CF1 1AN",
       "phone": "01234567813"
-    },
-    {
-      "id": "2ecb",
-      "firstName": "CyFnameStub",
-      "surname": "CyLname",
-      "address": "Flat, Street, City",
-      "postcode": "CyPostcode",
-      "phone": "Cy-01234"
     }
   ],
   "property": [

@@ -36,6 +36,13 @@ const sellerData = {
   ],
 };
 
+const newSeller = {
+  firstName: "Stub",
+  surname: "Stub",
+  address: "15 Main Street, Cardiff",
+  postcode: "CF1 1AN",
+  phone: "01234567813",
+};
 describe("tests stubbing", () => {
   it("intercepts the GET", () => {
     cy.intercept("GET", "http://localhost:3001/seller", sellerData.seller).as(
@@ -74,11 +81,14 @@ describe("tests stubbing from fixture", () => {
       .should("be.oneOf", [200, 304]);
 
     // Listen for POST request
-    cy.intercept("POST", "http://localhost:3001/seller").as("addSellerInfo");
+    cy.intercept("POST", "http://localhost:3001/seller", {
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newSeller),
+    }).as("addSellerInfo");
 
     //Add the seller
     cy.get("[data-cy=fname]").type("CyFnameStub");
-    cy.get("[data-cy=lname]").type("CyLname");
+    cy.get("[data-cy=lname]").type("CyLnameStub");
     cy.get("[data-cy=address]").type("Flat, Street, City");
     cy.get("[data-cy=postcode]").type("CyPostcode");
     cy.get("[data-cy=phone]").type("Cy-01234");
@@ -88,7 +98,14 @@ describe("tests stubbing from fixture", () => {
     //Stubbing
     cy.wait("@addSellerInfo");
 
+    //additional checks
     cy.get("[data-cy=sellerDetails]").should("have.length", "5");
+    cy.get("[data-cy=sellerDetails]")
+      .contains("Stub Stub")
+      .should("be.visible");
+    cy.get("[data-cy=sellerDetails]")
+      .contains("CyFnameStub CyLnameStub")
+      .should("not.exist");
   });
 
   //Tests the PUT method
