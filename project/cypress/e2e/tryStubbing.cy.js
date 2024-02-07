@@ -106,11 +106,24 @@ const propertyData = {
   ],
 };
 
-describe("tests stubbing", () => {
-  it("intercepts the GET", () => {
-    cy.intercept("GET", "http://localhost:3001/seller", sellerData.seller).as(
-      "getSellerInfo"
-    );
+// describe("tests stubbing", () => {
+//   it("intercepts the GET", () => {
+//     cy.intercept("GET", "http://localhost:3001/seller", sellerData.seller).as(
+//       "getSellerInfo"
+//     );
+
+//     cy.visit("http://localhost:3000/seller");
+//     cy.wait("@getSellerInfo");
+
+//     cy.get("[data-cy=sellerDetails]").should("have.length", "4");
+//   });
+// });
+
+describe("tests stubbing from fixture", () => {
+  it("intercepts the GET and replaces it with fixture", () => {
+    cy.intercept("GET", "http://localhost:3001/seller", {
+      fixture: "seller.json",
+    }).as("getSellerInfo");
 
     cy.visit("http://localhost:3000/seller");
     cy.wait("@getSellerInfo");
