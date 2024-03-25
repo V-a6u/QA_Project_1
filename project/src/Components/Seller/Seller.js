@@ -2,6 +2,8 @@ import React, {useEffect, useReducer, useRef, useState} from "react";
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Accordion from 'react-bootstrap/Accordion';
+
 
 import SellerForm from './AddSellerForm';
 import SellerProperty from './SellerProperty';
@@ -66,7 +68,7 @@ export default function Seller(){
     //Loaded on default
     useEffect(() => {
         setLoading(true);
-        fetch("https://localhost:3001/seller/")
+        fetch("http://localhost:3001/seller/")
             .then((response) => response.json())
             .then(sellers => {
                 dispatch({type: "SET", payload: sellers});
@@ -134,7 +136,14 @@ export default function Seller(){
     return(
         <>
             <div className="pageHeader bg-dark"><i className="bi bi-person-square"/>&nbsp;Manage Sellers</div>
-            <SellerForm addSellerHandler={sellerAddHandler}/>
+            <Accordion  >
+            <Accordion.Item eventKey="0">
+                <Accordion.Header>Add Seller</Accordion.Header>
+                <Accordion.Body>
+                <SellerForm addSellerHandler={sellerAddHandler}/>
+                </Accordion.Body>
+            </Accordion.Item>
+            </Accordion>
             <hr/>
 
             {

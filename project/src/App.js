@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import "./App.css";
+import 'react-calendar/dist/Calendar.css';
 
 import LandingPage from "./Components/LandingPage";
 import Home from "./Components/Home";
@@ -13,6 +14,7 @@ import SellerProperty from "./Components/Seller/SellerProperty";
 import Booking from './Components/Booking/Booking';
 import Error from "./Components/Error";
 import Login from "./Components/LoginTest";
+import Bookings from "./Components/Booking/Bookings";
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
                 <Route path="buyer" element={<Buyer/>}/>
                 <Route path="buyer/:buyerId/profile" element={<BuyerProfile/>}/>
                 <Route path="property/:propertyId/booking" element={<Booking/>}/>
+                <Route path="booking" element={<Bookings/>}/>
                 <Route path={"login"} element={<Login/>}/>
                 <Route path="*" element={<Error/>}/>
             </Route>
